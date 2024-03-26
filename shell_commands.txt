@@ -1,0 +1,21 @@
+export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+echo "deb https://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install fuse gcsfuse
+gcsfuse -v
+
+gcloud auth application-default login
+mkdir "$HOME/bucket"
+gcsfuse --implicit-dirs hs-deep-lab-donoho-seasia "$HOME/bucket"
+
+fusermount -u "$HOME/bucket"
+
+
+
+
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install pyg=*=*cu* -c pyg
+
+
+python test.py ../bucket/data/GEOM/checkpoints/${iter}.pt --start_idx 800 --end_idx 1000

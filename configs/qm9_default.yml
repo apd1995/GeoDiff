@@ -33,6 +33,6 @@ train:
     patience: 10
 
 dataset:
-  train: ./data/GEOM/QM9/train_data_40k.pkl
-  val: ./data/GEOM/QM9/val_data_5k.pkl
-  test: ./data/GEOM/QM9/test_data_1k.pkl
+  train: ../bucket/data/GEOM/QM9/train_data_40k.pkl
+  val: ../bucket/data/GEOM/QM9/val_data_5k.pkl
+  test: ../bucket/data/GEOM/QM9/test_data_1k.pkl
