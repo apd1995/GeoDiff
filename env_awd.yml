@@ -1,0 +1,11 @@
+name: geodiff
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - easydict
+  - pyyaml
+  - ca-certificates
+  - openssl
+  - pyg
+prefix: /Users/awd/miniforge3/envs/geodiff
