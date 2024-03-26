@@ -13,9 +13,13 @@ fusermount -u "$HOME/bucket"
 
 
 
-
+conda create -n geodiff python=3.10 -c conda-forge
+conda activate geodiff
+conda install PyYAML EasyDict
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 conda install pyg=*=*cu* -c pyg
 
 
 python test.py ../bucket/data/GEOM/checkpoints/${iter}.pt --start_idx 800 --end_idx 1000
+python test.py ./logs/drugs_1k_default_2024_03_24__22_50_36/checkpoints/100000.pt --test_set ../bucket/data/GEOM/Drugs/train_data_40k.pkl --start_idx 0 --end_idx 100 --n_steps 1000
+python test.py ./logs/drugs_1k_default_2024_03_24__22_50_36/checkpoints/100000.pt --test_set ../bucket/data/GEOM/Drugs/train_data_40k.pkl --start_idx 1259 --end_idx 4000 --n_steps 1000
