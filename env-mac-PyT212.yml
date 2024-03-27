@@ -1,0 +1,22 @@
+name: geodiff
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - mkl
+  - easydict
+  - pyyaml
+  - ca-certificates
+  - openssl
+  - rdkit
+  - pytorch==2.1.2
+  - torchvision==0.16.2
+  - torchaudio==2.1.2
+  - certifi
+  - pyg
+  - pytorch-scatter
+  - pytorch-sparse
+  - pytorch-cluster
+  - pytorch-spline-conv
+prefix: /Users/awd/miniforge3/envs/geodiff
