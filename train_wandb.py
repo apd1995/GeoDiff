@@ -65,11 +65,15 @@ if __name__ == '__main__':
     shutil.copyfile(config_path, os.path.join(log_dir, os.path.basename(config_path)))
 
     # Datasets and loaders
-    logger.info('Loading datasets...')
+    logger.info('Loading datasets...0')
     transforms = CountNodesPerGraph()
+    logger.info('Loading datasets...1')
     train_set = ConformationDataset(config.dataset.train, transform=transforms)
+    logger.info('Loading datasets...2')
     val_set = ConformationDataset(config.dataset.val, transform=transforms)
+    logger.info('Loading datasets...3')
     train_iterator = inf_iterator(DataLoader(train_set, config.train.batch_size, shuffle=True))
+    logger.info('Loading datasets...4')
     val_loader = DataLoader(val_set, config.train.batch_size, shuffle=False)
 
     # Model
@@ -77,9 +81,13 @@ if __name__ == '__main__':
     model = get_model(config.model).to(args.device)
 
     # Optimizer
+    logger.info('Building optimizer...')
     optimizer_global = get_optimizer(config.train.optimizer, model.model_global)
+    logger.info('Building optimizer...')
     optimizer_local = get_optimizer(config.train.optimizer, model.model_local)
+    logger.info('Building optimizer...')
     scheduler_global = get_scheduler(config.train.scheduler, optimizer_global)
+    logger.info('Building optimizer...')
     scheduler_local = get_scheduler(config.train.scheduler, optimizer_local)
     start_iter = 1
 
@@ -194,6 +202,7 @@ if __name__ == '__main__':
 
         return avg_loss
 
+    logger.info('Starting Training...')
     try:
         for it in range(start_iter, config.train.max_iters + 1):
             train(it)
