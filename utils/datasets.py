@@ -986,10 +986,7 @@ class PackedConformationDataset(ConformationDataset):
             data.num_pos_ref = torch.tensor([len(all_pos)], dtype=torch.long)
             #del data.pos
 
-            if hasattr(data, 'totalenergy'):
-                del data.totalenergy
-            if hasattr(data, 'boltzmannweight'):
-                del data.boltzmannweight
+   
             new_data.append(data)
         self.new_data = new_data
 
