@@ -33,6 +33,6 @@ train:
     patience: 10
 
 dataset:
-  train: ./data/GEOM/Drugs/train_data_larger_subsampled_aug_1.pkl
-  val: ./data/GEOM/Drugs/val_data_5k.pkl
-  test: ./data/GEOM/Drugs/test_data_1k.pkl
+  train: ../bucket/data/GEOM/Drugs/train_data_larger_subsampled_aug_1.pkl
+  val: ../bucket/data/GEOM/Drugs/val_data_5k.pkl
+  test: ../bucket/data/GEOM/Drugs/test_data_1k.pkl

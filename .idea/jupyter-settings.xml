@@ -11,6 +11,14 @@
             </JupyterConnectionParameters>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../Stats285/ScreeNOT/.idea/ScreeNOT.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="managed" value="true" />
+              <option name="sdkHomePath" value="$USER_HOME$/opt/anaconda3/envs/stats285/bin/python" />
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
